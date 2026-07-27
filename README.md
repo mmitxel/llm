@@ -48,7 +48,7 @@ Crea una carpeta oculta llamada `.streamlit` dentro del directorio del proyecto 
 5. Abre el archivo `secrets.toml` y agrega tus credenciales y la configuración del modelo de forma segura:
    ```toml
    GEMINI_API_KEY = "TU_API_KEY_AQUI"
-   GEMINI_MODEL = "gemini-3.5-flash"
+   GEMINI_MODEL = "GEMINI_MODEL"
    ```
 
 ## ▶️ Uso
@@ -66,4 +66,4 @@ Para iniciar la aplicación, asegúrate de tener tu entorno virtual activado, es
 
 * [Python](https://www.python.org/)
 * [Streamlit](https://streamlit.io/) (Interfaz de usuario web)
-* [Google Generative AI](https://ai.google.dev/) (Modelo Gemini 1.5 Flash optimizado para baja latencia)
+* [Google Generative AI](https://ai.google.dev/) (Modelo Gemini 3.5 Flash optimizado para baja latencia)
