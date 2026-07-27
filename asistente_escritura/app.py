@@ -13,6 +13,7 @@ st.write(
 # Intentar leer la API key de los secretos de Streamlit
 if "GEMINI_API_KEY" in st.secrets:
     api_key = st.secrets["GEMINI_API_KEY"]
+
 else:
     # Si no existe el archivo, pedirla por la interfaz
     api_key = st.text_input(
@@ -40,7 +41,7 @@ if api_key:
             if texto_usuario:
                 with st.spinner("Desglosando el carácter..."):
                     try:
-                        model = genai.GenerativeModel("gemini-flash-latest")
+                        model = genai.GenerativeModel(st.secrets["GEMINI_MODEL"])
                         prompt = f"""
                         Actúa como un profesor experto de chino mandarín. Analiza el siguiente texto: '{texto_usuario}'.
                         Proporciona la siguiente estructura exacta:
@@ -65,7 +66,7 @@ if api_key:
             if texto_usuario:
                 with st.spinner("Creando oraciones..."):
                     try:
-                        model = genai.GenerativeModel("gemini-flash-latest")
+                        model = genai.GenerativeModel(st.secrets["GEMINI_MODEL"])
                         prompt = f"""
                         Escribe 3 oraciones de ejemplo usando la palabra o concepto '{texto_usuario}' en chino mandarín.
                         Para cada oración incluye:
@@ -89,7 +90,7 @@ if api_key:
             if palabra1 and palabra2:
                 with st.spinner("Analizando matices..."):
                     try:
-                        model = genai.GenerativeModel("gemini-flash-latest")
+                        model = genai.GenerativeModel(st.secrets["GEMINI_MODEL"])
                         prompt = f"""
                         Explica la diferencia de uso y contexto entre '{palabra1}' y '{palabra2}' en chino mandarín.
                         Da una explicación clara y proporciona un ejemplo corto para cada una donde NO sean intercambiables.
